@@ -138,7 +138,7 @@ public class TestSettings
      * <p><b>Set to {@code true} during development</b> to allow time for debugging.</p>
      * <p><b>Set to {@code false} for exams/production</b> to prevent slow tests.</p>
      */
-    public static final boolean DEBUGGING = true;
+    public static final boolean DEBUGGING = false;
 
     /**
      * Timeout value in seconds for tests.

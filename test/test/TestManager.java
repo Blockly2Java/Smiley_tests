@@ -5,6 +5,7 @@ import levenshtein.*;
 
 
 import static levenshtein.StructuralLevenshtein.DetailLevel.ONE_PER_CLASS;
+import static levenshtein.StructuralLevenshtein.DetailLevel.ONE_PER_MEMBER_CATEGORY;
 import static levenshtein.StructuralLevenshtein.structuralTestFactory;
 import static org.assertj.core.api.Assertions.*;
 
@@ -43,22 +44,60 @@ public class TestManager {
     List<DynamicTest> strukturTests() {
         testCompilationAndSetup();
         return structuralTestFactory(
-            ONE_PER_CLASS,
+            ONE_PER_MEMBER_CATEGORY,
             mainClz
         );
     }
 
     @Test
-    void testMain() {
+    void testSmileyCtr_Speed() {
         try {
-            Tests.testMain();
+            Tests.testSmileyCtr_Speed();
         }
         catch (AssertionError e) {
             fail(e.getMessage());
         }
     }
 
+    @Test
+    void testSmileyCtr_Objects() {
+        try {
+            Tests.testSmileyCtr_Objects();
+        }
+        catch (AssertionError e) {
+            fail(e.getMessage());
+        }
+    }
 
+    @Test
+    void testBewegen() {
+        try {
+            Tests.testBewegen();
+        }
+        catch (AssertionError e) {
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    void testRumfliegen() {
+        try {
+            Tests.testRumfliegen();
+        }
+        catch (AssertionError e) {
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    void testRandErreicht() {
+        try {
+            Tests.testRandErreicht();
+        }
+        catch (AssertionError e) {
+            fail(e.getMessage());
+        }
+    }
 
 }    
 
