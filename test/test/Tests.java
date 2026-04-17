@@ -86,7 +86,7 @@ public class Tests {
     }
 
     public static void testRumfliegen() {
-        fail("Das Rumfliegen des SMileys kann gerade noch nicht überprüft werden.");
+        fail("Das Rumfliegen des Smileys kann gerade noch nicht überprüft werden.");
     }
 
     public static void testRandErreicht() {
