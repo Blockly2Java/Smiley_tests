@@ -4,8 +4,7 @@ import wrappers.*;
 import levenshtein.*;
 
 
-import static levenshtein.StructuralLevenshtein.DetailLevel.ONE_PER_CLASS;
-import static levenshtein.StructuralLevenshtein.DetailLevel.ONE_PER_MEMBER_CATEGORY;
+import static levenshtein.StructuralLevenshtein.DetailLevel.*;
 import static levenshtein.StructuralLevenshtein.structuralTestFactory;
 import static org.assertj.core.api.Assertions.*;
 
@@ -44,7 +43,7 @@ public class TestManager {
     List<DynamicTest> strukturTests() {
         testCompilationAndSetup();
         return structuralTestFactory(
-            ONE_PER_MEMBER_CATEGORY,
+            ONE_FOR_EVERYTHING,
             mainClz
         );
     }
@@ -63,6 +62,16 @@ public class TestManager {
     void testSmileyCtr_Objects() {
         try {
             Tests.testSmileyCtr_Objects();
+        }
+        catch (AssertionError e) {
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    void testSmileyCtr_Layout() {
+        try {
+            Tests.testSmileyCtr_Layout();
         }
         catch (AssertionError e) {
             fail(e.getMessage());
