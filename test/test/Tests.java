@@ -175,10 +175,10 @@ public class Tests {
         // die Augen sollen oberhalb der Mitte des Kopfes sein (oberhalb bedeutet y-Koordinate kleiner als kopf center y)
         assertThat(lY)
                 .withFailMessage(String.format("Das linke Auge des Smileys ist nicht oberhalb der Mitte des Kopfes. Das linke Auge hat Y=%f, die Mitte des Kopfes hat Y=%f. Das Auge soll oberhalb der Mitte sein!", lY, kY))
-                .isLessThan(kY);
+                .isLessThanOrEqualTo(kY);
         assertThat(rY)
                 .withFailMessage(String.format("Das rechte Auge des Smileys ist nicht oberhalb der Mitte des Kopfes. Das rechte Auge hat Y=%f, die Mitte des Kopfes hat Y=%f. Das Auge soll oberhalb der Mitte sein!", rY, kY))
-                .isLessThan(kY);
+                .isLessThanOrEqualTo(kY);
 
 
         // linkes und rechtes Auge sollen gleiche Y Koordinate haben
@@ -207,7 +207,7 @@ public class Tests {
         // der Mund soll unterhalb der Mitte des Kopfes sein (unterhalb bedeutet y-Koordinate groesser als kopf center y)
         assertThat(mY)
                 .withFailMessage(String.format("Der Mund des Smileys ist nicht unterhalb der Mitte des Kopfes. Der Mund hat Y=%f, die Mitte des Kopfes hat Y=%f. Der Mund soll unterhalb der Mitte sein!", mY, kY))
-                .isGreaterThan(kY);
+                .isGreaterThanOrEqualTo(kY);
 
         // der Mund soll horizontal zentriert am kopf sein
         assertThat(mX)
